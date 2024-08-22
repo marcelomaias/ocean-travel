@@ -2,13 +2,9 @@ import { FaMapLocationDot, FaSitemap } from "react-icons/fa6";
 import SectionB from "@/components/SectionB";
 import { getPlaces } from "@/actions";
 import Image from "next/image";
-import { roboto_slab } from "../layout";
 import BackLink from "@/components/BackLink";
-import PlacesList from "@/components/PlacesList";
 
-export default async function PlacesPage() {
-
-  const locations = await getPlaces()
+export default async function ContactPage() {
 
   return (
     <>
@@ -27,7 +23,7 @@ export default async function PlacesPage() {
         />
         <div className="relative z-10 text-white h-full flex flex-col justify-end container pb-8">
           <BackLink />
-          <h1 className={`${roboto_slab.className} -mb-4 mt-0`}>Contact</h1>
+          <h1 className="-mb-4 mt-0">Contact</h1>
           <p className="max-w-[450px]">Get in touch</p>
         </div>
       </section>
