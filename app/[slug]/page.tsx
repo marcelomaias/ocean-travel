@@ -4,18 +4,26 @@ import { roboto_slab } from "../layout";
 import BackLink from "@/components/BackLink";
 import { getPlaces } from "@/actions";
 
-const SingleView = async ({ params }: any) => {
+// ######### GETS ALL SLUGS SO IT CAN USE SSG ON BUILD #############################
+export async function generateStaticParams() {
+  const res = await fetch(`${process.env.WP_API_URL}/places`);
+  const data = await res.json();
+  const placeSlugs = data.map((place: { slug: string }) => ({ slug: place.slug }));
+  return placeSlugs;
+}
+// #################################################################################
+
+generateStaticParams()
+
+const SingleView = async ({ params }: { params: { slug: string } }) => {
 
   const locations = await getPlaces()
 
-
   const place = locations.filter((el: location) => el.slug === params.slug)[0]
-
-  console.log('PLACE: ', place)
 
   return (
     <>
-      <section className="relative h-1/2">
+      <section className="relative h-1/2 bg-black">
         <Image
           src={place._embedded['wp:featuredmedia']['0'].media_details.sizes.full.source_url}
           fill
@@ -26,6 +34,7 @@ const SingleView = async ({ params }: any) => {
                 (max-width: 900px) 800px,
                 1920px'
           priority
+          className="opacity-50"
         />
         <div className="relative z-10 text-white h-full flex flex-col justify-end container pb-8">
           <BackLink />

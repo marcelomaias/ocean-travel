@@ -6,6 +6,7 @@ import { IoLocationSharp } from "react-icons/io5";
 
 type placeProps = {
   place: location
+  type?: string
 }
 
 const PlaceCard = ({ place }: placeProps) => {

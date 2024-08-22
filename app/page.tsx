@@ -1,19 +1,14 @@
 import HeadingA from "@/components/HeadingA";
 import Hero from "@/components/Hero";
-import Places from "@/components/Places";
 import { FaMapLocationDot, FaSitemap } from "react-icons/fa6";
 import SectionA from "@/components/SectionA";
 import SectionB from "@/components/SectionB";
 import LatestPlaces from "@/components/LatestPlaces";
 import { location } from "@/types";
 import { getPlaces } from "@/actions";
+import PlacesList from "@/components/PlacesList";
 
 export default async function Home() {
-
-  // const res = await fetch('http://ocean.local/wp-json/wp/v2/posts')
-  // const data = await res.json()
-
-  // console.log(data)
 
   const locations = await getPlaces()
 
@@ -21,9 +16,9 @@ export default async function Home() {
 
   return (
     <>
-      <Hero />
+      <Hero places={locations} />
       <HeadingA title="Popular destinations" subtitle="Where to go" />
-      <Places places={popularLocations} limit={4} />
+      <PlacesList places={popularLocations} limit={4} />
 
       <div className="container mx-auto mb-8 mt-20 px-2 flex justify-between flex-col sm:flex-row gap-20">
         <div className="flex items-center gap-8">

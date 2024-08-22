@@ -27,12 +27,14 @@ export default async function PlacesPage() {
         />
         <div className="relative z-10 text-white h-full flex flex-col justify-end container pb-8">
           <BackLink />
-          <h1 className={`${roboto_slab.className} -mb-4 mt-0`}>Places</h1>
-          <p className="max-w-[450px]">Explore the world&apos;s most beautiful places.</p>
+          <h1 className={`${roboto_slab.className} -mb-4 mt-0`}>Contact</h1>
+          <p className="max-w-[450px]">Get in touch</p>
         </div>
       </section>
 
-      <PlacesList places={locations} type="placesList" />
+      <main className="container">
+        <h1>Contact Page</h1>
+      </main>
 
       <SectionB />
 

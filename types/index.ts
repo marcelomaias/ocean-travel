@@ -7,6 +7,7 @@ export type location = {
   acf: {
     location: string
     is_popular: boolean
+    is_hero: boolean
     description: string
   }
   content: {

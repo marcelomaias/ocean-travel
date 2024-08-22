@@ -16,7 +16,7 @@ const LatestPlaces = ({ limit, places }: placesProps) => {
   return (
     <Gsapify>
       <section className="container grid grid-cols-1 sm:grid-cols-2 gap-8 justify-between latest-places relative">
-        <Image src='/stamp.svg' width={230} height={230} className="stamp absolute -top-64 right-0" alt="Stamp image." />
+        <Image src='/stamp.svg' width={230} height={230} className="stamp absolute -top-[238px] md:-top-64 right-10 w-[128px] h-[128px] md:w-[230px] md:h-[230px]" alt="Stamp image." />
         {
           limitedPosts.map(place => (
             <LatestPlaceCard key={place.slug} place={place} />

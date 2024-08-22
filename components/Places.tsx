@@ -13,13 +13,11 @@ const Places = ({ limit, places }: placesProps) => {
   const sortedLocations: location[] = [...places].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()) // SORT POSTS
   const limitedPosts = limit ? sortedLocations.slice(0, limit) : sortedLocations // LIMIT POSTS
 
-  console.log('PLACES: ', places)
-
   return (
     <Gsapify>
       <section className="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-between overflow-hidden">
         {
-          places.map(place => (
+          limitedPosts.map(place => (
             <PlaceCard key={place.slug} place={place} />
           ))
         }

@@ -24,7 +24,7 @@ const LatestPlaceCard = ({ place }: placeProps) => {
       />
       <div className="z-10 relative">
         <h3 className={`text-lg md:text-4xl font-normal ${roboto_slab.className} [text-shadow:_2px_1px_3px_rgb(0_0_0_/_70%)]`}>{place.title.rendered}</h3>
-        <p className="[text-shadow:_2px_1px_3px_rgb(0_0_0_/_70%)]">{place.acf.description}</p>
+        <p className="[text-shadow:_2px_1px_3px_rgb(0_0_0_/_70%)] max-w-[500px]">{place.acf.description}</p>
         <span className="flex gap-2 items-center mt-2 uppercase tracking-wider text-sm [text-shadow:_2px_1px_3px_rgb(0_0_0_/_70%)]">Read More <MdArrowCircleRight size={28} className="[text-shadow:_2px_1px_3px_rgb(0_0_0_/_70%)]" /></span>
       </div>
 
