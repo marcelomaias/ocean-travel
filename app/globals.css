@@ -4,9 +4,18 @@
 
 html, body {
   height: 100vh;
+  font-family: var(--font-roboto);
+}
+
+.roboto {
+  font-family: var(--font-roboto);
+}
+.roboto-slab {
+  font-family: var(--font-roboto-slab);
 }
 
 h1 {
+  font-family: var(--font-roboto-slab);
   @apply text-[34px] md:text-[48px] font-semibold mt-8;
 }
 
@@ -15,7 +24,11 @@ p {
 }
 
 h2 {
+  font-family: var(--font-roboto-slab);
   @apply text-[26px] md:text-[38px] mt-8 font-semibold;
+}
+h3 {
+  font-family: var(--font-roboto-slab);
 }
 
 .container {

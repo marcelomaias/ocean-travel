@@ -4,16 +4,18 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-export const roboto = Roboto({
+const roboto = Roboto({
   weight: ['300', '400', '700'],
   style: ['normal', 'italic'],
   subsets: ['latin'],
   display: 'swap',
+  variable: '--font-roboto'
 });
 
-export const roboto_slab = Roboto_Slab({
+const roboto_slab = Roboto_Slab({
   subsets: ['latin'],
   display: 'swap',
+  variable: '--font-roboto-slab'
 })
 
 export const metadata: Metadata = {
@@ -28,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning={true} className={roboto.className}>
+      <body suppressHydrationWarning={true} className={`${roboto.variable} ${roboto_slab.variable}`}>
         <Header />
         {children}
         <Footer />

@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { FaUserAstronaut } from "react-icons/fa6";
-import { roboto_slab } from "@/app/layout";
 import Link from "next/link";
 
 const SectionB = () => {
@@ -21,12 +20,12 @@ const SectionB = () => {
           />
         </div>
         <div>
-          <h2 className={`mt-0 ${roboto_slab.className}`}>Lonsectetur adipiscing elit</h2>
+          <h2 className="mt-0">Lonsectetur adipiscing elit</h2>
           <p>Lonsectetur adipiscing elit. Integer iaculis pharetra purus ut porta. Nulla facilisi. Proin egestas enim eu justo imperdiet blandit.</p>
 
           <p>Commodo, urna ut pharetra eleifend, tellus ante suscipit nulla, at convallis nisl purus vitae turpis. Vivamus commodo vel dui vel tempor. Proin aliquam nisl non dui dapibus euismod.</p>
 
-          <Link className="inline-block px-6 py-3 ring-2 ring-black text-black mt-8" href="/">Explore now!</Link>
+          <Link className="px-6 py-3 ring-1 ring-black block w-max uppercase text-sm tracking-widest mt-6" href="/places">Explore it now!</Link>
         </div>
 
 

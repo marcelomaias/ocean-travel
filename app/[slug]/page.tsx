@@ -1,6 +1,5 @@
 import { location } from "@/types";
 import Image from "next/image";
-import { roboto_slab } from "../layout";
 import BackLink from "@/components/BackLink";
 import { getPlaces } from "@/actions";
 
@@ -38,7 +37,7 @@ const SingleView = async ({ params }: { params: { slug: string } }) => {
         />
         <div className="relative z-10 text-white h-full flex flex-col justify-end container pb-8">
           <BackLink />
-          <h1 className={`${roboto_slab.className} -mb-4 mt-0`}>{place.title.rendered}</h1>
+          <h1 className="-mb-4 mt-0">{place.title.rendered}</h1>
           <p className="max-w-[450px]">{place.acf.description}</p>
         </div>
       </section>

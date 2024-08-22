@@ -1,6 +1,5 @@
 'use client'
 
-import { roboto_slab } from "@/app/layout";
 import { location } from "@/types";
 import Image from "next/image";
 
@@ -49,7 +48,7 @@ const Hero = ({ places }: HeroProps) => {
               />
               <div className="relative z-10 text-white h-full flex flex-col justify-center container">
                 <h1 className={`mt-0`}>{slide.title.rendered}</h1>
-                <p className="max-w-[540px]">{slide.acf.description}</p>
+                <p className="max-w-[540px] mt-0">{slide.acf.description}</p>
                 <Link className="px-6 py-3 ring-1 ring-white block w-max uppercase text-sm tracking-widest mt-6" href={slide.slug}>Explore it now!</Link>
               </div>
             </div>
