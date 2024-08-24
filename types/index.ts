@@ -18,3 +18,13 @@ export type location = {
   date: string;
   _embedded: any
 }
+
+export type status = {
+  isSuccess: boolean
+  message?: string
+  validationError: {
+    'the-email': string
+    'the-name': string
+    'the-subject': string
+  }
+}

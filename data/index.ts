@@ -8,15 +8,15 @@ export const mainNav = [
   {
     path: "/places",
     label: "Places"
-  }
+  },
   // {
   //   path: "/about",
   //   label: "About"
   // },
-  // {
-  //   path: "/contact",
-  //   label: "Contact"
-  // }
+  {
+    path: "/contact",
+    label: "Contact"
+  }
 ]
 
 // export const locations: location[] = [

@@ -1,8 +1,10 @@
-import { FaMapLocationDot, FaSitemap } from "react-icons/fa6";
+import { FaMapLocationDot, FaPhone, FaSitemap } from "react-icons/fa6";
 import SectionB from "@/components/SectionB";
-import { getPlaces } from "@/actions";
 import Image from "next/image";
 import BackLink from "@/components/BackLink";
+import ContactForm from "@/components/ContactForm";
+import { IoLocationSharp } from "react-icons/io5";
+import { FaMobileAlt } from "react-icons/fa";
 
 export default async function ContactPage() {
 
@@ -29,7 +31,40 @@ export default async function ContactPage() {
       </section>
 
       <main className="container">
-        <h1>Contact Page</h1>
+        <div className="flex gap-20 mt-20 max-w-[692px] mx-auto">
+          <div className="w-2/3">
+            <ContactForm />
+          </div>
+          <div className="w-1/3">
+            <h3 className="font-semibold mb-2">Contact Info</h3>
+            <span className="font-light">Nunc lobortis mattis aliquam faucibus purus in massa arcu odio ut sem nulla pharetra diam amet.</span>
+
+            <div className="flex items-center gap-2 mt-8">
+              <IoLocationSharp size={24} />
+              <div>
+                <div className="font-semibold text-sm">Address:</div>
+                <address className="font-light not-italic">Street Name, NY 38954</address>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2 mt-4">
+              <FaPhone size={24} />
+              <div>
+                <div className="font-semibold text-sm">Phone:</div>
+                <div className="font-light not-italic">5555-5555</div>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2 mt-4">
+              <FaMobileAlt size={24} />
+              <div>
+                <div className="font-semibold text-sm">Mobile:</div>
+                <div className="font-light not-italic">5555-5555</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </main>
 
       <SectionB />

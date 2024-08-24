@@ -6,3 +6,22 @@ export function slugify(str: string) {
     .replace(/-+/g, '-'); // remove consecutive hyphens
   return str;
 }
+
+export const normalizeResponse = (response: any) => {
+
+  const isSuccess = response.status === "mail_sent";
+  const message = response.message;
+  const validationError = isSuccess
+    ? {}
+    : Object.fromEntries(
+      response.invalid_fields.map((error: any) => {
+        return [error.field, error.message];
+      })
+    );
+
+  return {
+    isSuccess,
+    message,
+    validationError
+  };
+};

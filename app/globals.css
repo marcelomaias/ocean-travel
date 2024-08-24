@@ -16,7 +16,7 @@ html, body {
 
 h1 {
   font-family: var(--font-roboto-slab);
-  @apply text-[34px] md:text-[48px] font-semibold mt-8;
+  @apply text-[34px] md:text-[48px] lg:text-[72px] font-semibold mt-8;
 }
 
 p {
