@@ -31,11 +31,12 @@ export default async function ContactPage() {
       </section>
 
       <main className="container">
-        <div className="flex gap-20 mt-20 max-w-[692px] mx-auto">
-          <div className="w-2/3">
+        <div className="flex flex-col md:flex-row gap-20 mt-20 max-w-[692px] mx-auto">
+          <div className="md:w-2/3">
+            <p className="mb-8 font-semibold">You can use the form bellow to get in touch:</p>
             <ContactForm />
           </div>
-          <div className="w-1/3">
+          <div className="md:w-1/3">
             <h3 className="font-semibold mb-2">Contact Info</h3>
             <span className="font-light">Nunc lobortis mattis aliquam faucibus purus in massa arcu odio ut sem nulla pharetra diam amet.</span>
 
@@ -74,14 +75,14 @@ export default async function ContactPage() {
           <FaMapLocationDot size="4em" className="flex-shrink-0" color="#333333" />
           <div>
             <h4 className="font-semibold text-2xl">Cras suscipit enim</h4>
-            <p className="font-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras suscipit enim enim, quis convallis risus scelerisque nec. Nulla facilisi. Maecenas eget libero tempus, dictum nunc ac.</p>
+            <p className="font-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras suscipit enim enim, quis convallis risus scelerisque nec. Nulla facilisi. Maecenas eget libero tempus.</p>
           </div>
         </div>
         <div className="flex items-center gap-8">
           <FaSitemap size="4em" className="flex-shrink-0" color="#333333" />
           <div>
             <h4 className="font-semibold text-2xl">Volutpat lacus scelerisque</h4>
-            <p className="font-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras suscipit enim enim, quis convallis risus scelerisque nec. Nulla facilisi. Maecenas eget libero tempus, dictum nunc ac.</p>
+            <p className="font-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras suscipit enim enim, quis convallis risus scelerisque nec. Nulla facilisi. Maecenas eget libero tempus.</p>
           </div>
         </div>
       </div>
