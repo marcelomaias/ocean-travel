@@ -4,7 +4,6 @@
 
 html, body {
   height: 100vh;
-  font-family: var(--font-roboto);
 }
 
 .roboto {
@@ -12,6 +11,12 @@ html, body {
 }
 .roboto-slab {
   font-family: var(--font-roboto-slab);
+}
+
+body {
+  height: 100vh;
+  font-family: var(--font-roboto);
+  font-weight: 300;
 }
 
 h1 {
@@ -169,4 +174,91 @@ h3 {
   width: 16px !important;
   height: 16px !important;
   background-color: #fff !important;
+}
+
+
+.richText {
+  h2 {
+    margin-bottom: 1em;
+  }
+  ul {
+    list-style: disc outside;
+    padding-left: 1rem;
+  }
+}
+
+.wp-block-columns {
+	display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 60px;
+}
+
+.wp-block-column {
+	flex: 1;
+}
+
+@media (min-width: 600px) {
+  .wp-block-columns {
+    flex-direction: row;
+    gap: 30px;
+  }
+}
+
+figure {
+  position: relative;
+}
+figcaption {
+  font-size: 14px;
+  font-style: italic;
+  font-weight: normal;
+  color: #333333;
+  margin-top: 4px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(257, 257, 257, .75);
+  padding:1px 6px;
+}
+
+.align-middle {
+  align-items: center;
+}
+
+.page-main-content {
+  max-width: 992px;
+  margin: 0 auto;
+}
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+}
+.icon-container {
+  margin-top: 60px;
+
+  img {
+    display: block;
+    max-width: 128px;
+    margin: 0 auto;
+  }
+  p {
+    font-size: 16px;
+    text-align: center;
+  }
 }

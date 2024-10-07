@@ -50,7 +50,7 @@ export default async function Home() {
           <FaMapLocationDot size="4em" className="flex-shrink-0" color="#333333" />
           <div>
             <h4 className="font-semibold text-2xl">Cras suscipit enim</h4>
-            <p className="font-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras suscipit enim enim, quis convallis risus scelerisque nec. Nulla facilisi. Maecenas eget libero tempus</p>
+            <p className="font-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras suscipit enim enim, quis convallis risus scelerisque nec. Nulla facilisi. Maecenas eget libero tempus.</p>
           </div>
         </div>
         <div className="flex items-center gap-8">

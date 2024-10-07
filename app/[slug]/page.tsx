@@ -1,33 +1,24 @@
 import { location } from "@/types";
 import Image from "next/image";
 import BackLink from "@/components/BackLink";
-import { getPlaces } from "@/actions";
-
-// ######### GETS ALL SLUGS SO IT CAN USE SSG ON BUILD #############################
-export async function generateStaticParams() {
-  const res = await fetch(`${process.env.WP_API_URL}/places`);
-  const data = await res.json();
-  const placeSlugs = data.map((place: { slug: string }) => ({ slug: place.slug }));
-  return placeSlugs;
-}
-// #################################################################################
-
-generateStaticParams()
+import { getPage } from "@/actions";
+import parse from 'html-react-parser';
 
 const SingleView = async ({ params }: { params: { slug: string } }) => {
 
-  const locations = await getPlaces()
+  const thepage = await getPage(params.slug)
 
-  const place = locations.filter((el: location) => el.slug === params.slug)[0]
+  const page = thepage[0]
 
   return (
     <>
-      <section className="relative h-1/2 bg-black">
+        
+      <section className="relative h-1/3 bg-black">
         <Image
-          src={place._embedded['wp:featuredmedia']['0'].media_details.sizes.full.source_url}
+          src="/ocean2.jpg"
           fill
-          alt={place._embedded['wp:featuredmedia']['0'].alt_text}
-          style={{ objectFit: 'cover' }}
+          alt="Image of the ocean."
+          style={{ objectFit: 'cover' }}    
           sizes='
                 (max-width: 500px) 400px,
                 (max-width: 900px) 800px,
@@ -37,12 +28,12 @@ const SingleView = async ({ params }: { params: { slug: string } }) => {
         />
         <div className="relative z-10 text-white h-full flex flex-col justify-end container pb-8">
           <BackLink />
-          <h1 className="-mb-4 mt-0">{place.title.rendered}</h1>
-          <p className="max-w-[450px]">{place.acf.description}</p>
+          <h1 className="-mb-4 mt-0">{page.title.rendered}</h1>
+          <p className="max-w-[450px]">{page.acf.description}</p>
         </div>
       </section>
-      <main className="container py-16 main-content">
-        <div dangerouslySetInnerHTML={{ __html: place.content.rendered }} className="md:text-lg" />
+      <main className="container py-16 main-content page-main-content">
+        <div className="richText md:text-lg">{parse(page.content.rendered)}</div>
       </main>
 
     </>

@@ -10,7 +10,7 @@ type placeProps = {
 
 const LatestPlaceCard = ({ place }: placeProps) => {
   return (
-    <Link href={place.slug} className='w-full aspect-[16/9] sm:first-of-type:col-span-2 sm:first-of-type:aspect-[16/5] bg-slate-400 relative flex text-white items-end rounded-xl overflow-hidden p-8'>
+    <Link href={`/places/${place.slug}`} className='w-full aspect-[16/9] sm:first-of-type:col-span-2 sm:first-of-type:aspect-[16/5] bg-slate-400 relative flex text-white items-end rounded-xl overflow-hidden p-8'>
       <Image
         className='object-cover scale-1 hover:scale-[1.2] transition-all'
         src={place._embedded['wp:featuredmedia']['0'].media_details.sizes.full.source_url}

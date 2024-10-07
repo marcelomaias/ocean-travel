@@ -13,7 +13,7 @@ const PlaceCard = ({ place }: placeProps) => {
 
 
   return (
-    <Link href={place.slug} className='place-card w-full aspect-[4/6] bg-slate-400 relative flex justify-center text-center text-white items-end rounded-xl overflow-hidden pb-8'>
+    <Link href={`/places/${place.slug}`} className='place-card w-full aspect-[4/6] bg-slate-400 relative flex justify-center text-center text-white items-end rounded-xl overflow-hidden pb-8'>
       <Image
         className='object-cover scale-1 hover:scale-[1.2] transition-all'
         src={place._embedded['wp:featuredmedia']['0'].media_details.sizes.full.source_url}

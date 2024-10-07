@@ -9,10 +9,10 @@ export const mainNav = [
     path: "/places",
     label: "Places"
   },
-  // {
-  //   path: "/about",
-  //   label: "About"
-  // },
+  {
+    path: "/sample-page",
+    label: "Sample Page"
+  },
   {
     path: "/contact",
     label: "Contact"

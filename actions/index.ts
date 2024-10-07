@@ -3,3 +3,9 @@ export async function getPlaces() {
 
   return await res.json()
 }
+
+export async function getPage(slug: string) {
+  const res = await fetch(`${process.env.WP_API_URL}/pages?slug=${slug}`, { next: { revalidate: 5 } })
+
+  return await res.json()
+}
