@@ -4,6 +4,16 @@ import BackLink from "@/components/BackLink";
 import { getPage } from "@/actions";
 import parse from 'html-react-parser';
 
+// ######### GETS ALL SLUGS SO IT CAN USE SSG ON BUILD #############################
+export async function generateStaticParams() {
+  const res = await fetch(`${process.env.WP_API_URL}/pages?_fields=slug`);
+  const data = await res.json();
+  
+  const pageSlugs = data.map((page: { slug: string }) => ({ slug: page.slug }));
+  return pageSlugs;
+}
+// #################################################################################
+
 const SingleView = async ({ params }: { params: { slug: string } }) => {
 
   const thepage = await getPage(params.slug)

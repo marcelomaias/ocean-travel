@@ -12,7 +12,6 @@ export async function generateStaticParams() {
 }
 // #################################################################################
 
-generateStaticParams()
 
 const SingleView = async ({ params }: { params: { slug: string } }) => {
 
